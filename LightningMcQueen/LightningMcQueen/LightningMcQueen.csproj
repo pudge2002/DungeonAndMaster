@@ -5,7 +5,6 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Alturos.Yolo" Version="3.0.6-alpha" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
   </ItemGroup>
 </Project>
