@@ -30,7 +30,10 @@
            HorizontalAlignment="Left"
            Foreground="White"
            FontSize="28" Grid.ColumnSpan="2" Margin="10,0,0,0" Width="433" />
-            <Image Grid.Column="1" HorizontalAlignment="Left" Height="244" Margin="10,179,0,0" Grid.Row="1" VerticalAlignment="Top" Width="456" Grid.ColumnSpan="2"/>
+            <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Height="244" Margin="10,179,0,0" Grid.Row="1" VerticalAlignment="Top" Width="456" Grid.ColumnSpan="2"
+                   Source="{Binding ImageSource}"
+
+                />
             <!--<StackPanel Grid.Column="1" Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.79,0.487" Width="291" Margin="104,0,0,0">
                 <Button Content="Кнопка 1" Margin="10"/>
                 <Button Content="Кнопка 2" Margin="10" RenderTransformOrigin="5.102,0.625"/>
