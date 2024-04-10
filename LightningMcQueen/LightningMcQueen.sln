@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightningMcQueen", "LightningMcQueen\LightningMcQueen.csproj", "{28922F7A-8623-4EDE-B3D5-2696663F9B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{2C0B091A-C08C-494B-9CEB-E386F75EF7D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28922F7A-8623-4EDE-B3D5-2696663F9B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28922F7A-8623-4EDE-B3D5-2696663F9B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28922F7A-8623-4EDE-B3D5-2696663F9B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28922F7A-8623-4EDE-B3D5-2696663F9B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0B091A-C08C-494B-9CEB-E386F75EF7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0B091A-C08C-494B-9CEB-E386F75EF7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0B091A-C08C-494B-9CEB-E386F75EF7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0B091A-C08C-494B-9CEB-E386F75EF7D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {367A52ED-6252-4B12-A94D-BE518FCBB24D}
+	EndGlobalSection
+EndGlobal
