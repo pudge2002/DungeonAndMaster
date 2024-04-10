@@ -11,6 +11,8 @@ namespace LightningMcQueen.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        string Image {  get; set; }
+
         public MainWindowViewModel()
         {
 
