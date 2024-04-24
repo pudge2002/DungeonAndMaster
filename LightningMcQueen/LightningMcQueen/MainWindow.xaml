@@ -6,12 +6,12 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Агломашина"
         Height="700" Width="900"
-        Cursor="AppStarting"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="AliceBlue"
-        AllowsTransparency="True">
-
+        AllowsTransparency="True"
+        MouseDown="MovingWindow">
+        
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
