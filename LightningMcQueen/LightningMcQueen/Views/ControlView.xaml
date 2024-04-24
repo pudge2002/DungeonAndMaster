@@ -6,16 +6,19 @@
              xmlns:local="clr-namespace:LightningMcQueen.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="700"
-             Background="Azure">
+             Background="Azure"
+             HorizontalAlignment="Stretch">
+              
     <StackPanel>
         <TextBlock Text="Состояние"
                    Foreground="Black"
                    FontSize="20"
-                   HorizontalAlignment="Left"
-                   Margin="20,10,0,10">
+                   HorizontalAlignment="Stretch"
+                   Margin="20,10,0,10"
+                   >
         </TextBlock>
         <StackPanel>
-            <TextBox Height="295" Width="690" HorizontalAlignment="Left" Margin="5"/>
+            <TextBox Height="386" Width="690" HorizontalAlignment="Left" Margin="5" Style="{StaticResource ModernTextbox}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>
