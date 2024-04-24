@@ -1,24 +1,4 @@
-﻿using Prism.Mvvm;
-using Alturos.Yolo;
-using System.Windows.Documents;
-using Alturos.Yolo.Model;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Media.Imaging;
-using System.Drawing.Imaging;
-
-
-using System.Windows;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Threading;
-using LightningMcQueen.Core;
+﻿using LightningMcQueen.Core;
 
 
 namespace LightningMcQueen.ViewModels
@@ -27,8 +7,10 @@ namespace LightningMcQueen.ViewModels
     {
         public RelayCommand ControlViewCommand { get; set; }
         public RelayCommand CamsViewCommand { get; set; }
+        public RelayCommand AboutViewCommand { get; set; }
         public ControlViewModel ControlVM { get; set; }
         public CamsViewModel CamsVM { get; set; }
+        public AboutViewModel AboutVM { get; set; }
         private object _currentView;
 
         public object CurrentView
@@ -45,6 +27,7 @@ namespace LightningMcQueen.ViewModels
         {
             ControlVM= new ControlViewModel();
             CamsVM= new CamsViewModel();
+            AboutVM= new AboutViewModel();
             CurrentView = ControlVM;
             ControlViewCommand = new RelayCommand(o =>
             {
@@ -53,6 +36,10 @@ namespace LightningMcQueen.ViewModels
             CamsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CamsVM;
+            });
+            AboutViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = AboutVM;
             });
         }   
     }

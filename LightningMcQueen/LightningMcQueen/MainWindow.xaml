@@ -39,7 +39,7 @@
             <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" RenderTransformOrigin="0.838,0.45" Height="100" Cursor="">
                 <RadioButton Content="Состояние"  Style="{StaticResource MenuButtonTheme}" Width="100" Height="30" IsChecked="True" Command="{Binding ControlViewCommand}"/>
                 <RadioButton Content="Камера"  Style="{StaticResource MenuButtonTheme}" Width="100" Height="30" Command="{Binding CamsViewCommand}"/>
-
+                <RadioButton Content="О программе"  Style="{StaticResource MenuButtonTheme}" Width="100" Height="30" Command="{Binding AboutViewCommand}"/>
             </StackPanel>
             <ContentControl Grid.Row="1"
                              Grid.Column="1"

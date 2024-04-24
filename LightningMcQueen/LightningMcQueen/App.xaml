@@ -18,6 +18,9 @@
             <DataTemplate DataType="{x:Type viewModel:CamsViewModel}">
                 <view:CamsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
+                <view:AboutView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
