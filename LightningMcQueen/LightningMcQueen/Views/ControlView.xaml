@@ -10,7 +10,7 @@
              HorizontalAlignment="Stretch">
               
     <StackPanel>
-        <TextBlock Text="Состояние агломашины"
+        <TextBlock Text="Состояние не агломашины"
                    Foreground="Black"
                    FontSize="20"
                    HorizontalAlignment="Stretch"
