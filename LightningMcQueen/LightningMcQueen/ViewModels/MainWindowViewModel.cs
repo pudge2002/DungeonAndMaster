@@ -15,88 +15,45 @@ using System.Drawing.Imaging;
 
 
 using System.Windows;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Threading;
+using LightningMcQueen.Core;
 
 
 namespace LightningMcQueen.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    class MainWindowViewModel : ObservableObject
     {
-        private string _title = "Prism Application";
-        public string Title
+        public RelayCommand ControlViewCommand { get; set; }
+        public RelayCommand CamsViewCommand { get; set; }
+        public ControlViewModel ControlVM { get; set; }
+        public CamsViewModel CamsVM { get; set; }
+        private object _currentView;
+
+        public object CurrentView
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get { return _currentView; }
+            set 
+            { 
+                _currentView = value; 
+                OnPropertyChanged(); 
+            }
         }
 
-        public BitmapImage ImageSource { get; set; }
-
-        //public Image image;
         public MainWindowViewModel()
         {
-            string path = "C:\\Users\\MAXIM\\source\\repos\\DungeonAndMaster\\LightningMcQueen\\";
-            ImageSource = new BitmapImage(new Uri(path + "Images\\Bird1.png"));
-
-            string path2 = "C:\\Users\\MAXIM\\source\\repos\\DungeonAndMaster\\LightningMcQueen\\Alturos.YoloV2TinyVocData\\data\\";
-            YoloWrapper yoloWrapper = new YoloWrapper(path2 + "yolov2-tiny-voc.cfg", path2 + "yolov2-tiny-voc.weights", path2 + "voc.names");
-
-            List<YoloItem> items;
-            items = yoloWrapper.Detect(path + "Images\\Bird1.png").ToList();
-
-            //DrawBoundingBoxes(items);
-        }
-
-        private void DrawBoundingBoxes(List<YoloItem> items, YoloItem selectedItem = null)
-        {
-            //var imageInfo = this.GetCurrentImage();
-            ////Load the image(probably from your stream)
-            //image = Image.FromFile(imageInfo.Path);
-
-            Image image = null;
-
-            using (var canvas = Graphics.FromImage(image))
+            ControlVM= new ControlViewModel();
+            CamsVM= new CamsViewModel();
+            CurrentView = ControlVM;
+            ControlViewCommand = new RelayCommand(o =>
             {
-                foreach (var item in items)
-                {
-                    var x = item.X;
-                    var y = item.Y;
-                    var width = item.Width;
-                    var height = item.Height;
-
-                    var brush = this.GetBrush(item.Confidence);
-                    var penSize = image.Width / 100.0f;
-
-                    using (var pen = new Pen(brush, penSize))
-                    using (var overlayBrush = new SolidBrush(Color.FromArgb(150, 255, 255, 102)))
-                    {
-                        if (item.Equals(selectedItem))
-                        {
-                            canvas.FillRectangle(overlayBrush, x, y, width, height);
-                        }
-
-                        canvas.DrawRectangle(pen, x, y, width, height);
-                    }
-                }
-
-                canvas.Flush();
-            }
-
-            //var oldImage = this.pictureBox1.Image;
-            //this.pictureBox1.Image = image;
-            //oldImage?.Dispose();
-        }
-
-        private Brush GetBrush(double confidence)
-        {
-            if (confidence > 0.5)
+                CurrentView = ControlVM;
+            });
+            CamsViewCommand = new RelayCommand(o =>
             {
-                return Brushes.GreenYellow;
-            }
-            else if (confidence > 0.2 && confidence <= 0.5)
-            {
-                return Brushes.Orange;
-            }
-
-            return Brushes.DarkRed;
-        }
+                CurrentView = CamsVM;
+            });
+        }   
     }
 }

@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="LightningMcQueen.Views.ControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightningMcQueen.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700"
+             Background="Azure">
+    <StackPanel>
+        <TextBlock Text="Состояние"
+                   Foreground="Black"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   Margin="20,10,0,10">
+        </TextBlock>
+        <StackPanel>
+            <TextBox Height="295" Width="690" HorizontalAlignment="Left" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

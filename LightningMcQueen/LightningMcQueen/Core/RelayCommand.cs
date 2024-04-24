@@ -20,7 +20,7 @@ namespace LightningMcQueen.Core
         }
         public bool CanExecute(object parameter)
         {
-            return _canExecute(parameter)||_canExecute==null;
+            return  _canExecute==null || _canExecute(parameter);
         }
         public void Execute(object parameter)
         {

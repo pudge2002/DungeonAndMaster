@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using LightningMcQueen.ViewModels;
+using System.Windows;
 
 namespace LightningMcQueen.Views
 {
