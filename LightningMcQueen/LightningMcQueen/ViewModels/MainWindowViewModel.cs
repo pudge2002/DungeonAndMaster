@@ -8,7 +8,7 @@ namespace LightningMcQueen.ViewModels
 {
     class MainWindowViewModel : BindableBase
     {
-        public ICommand MoveWindowCommand { get; }
+        
         public DelegateCommand ControlViewCommand { get; set; }
         public DelegateCommand CamsViewCommand { get; set; }
         public DelegateCommand AboutViewCommand { get; set; }
@@ -25,13 +25,10 @@ namespace LightningMcQueen.ViewModels
                 SetProperty(ref _currentView, value);
             }
         }
-        private void MoveWindow(Window window)
-        {
-            window.DragMove();
-        }
+       
         public MainWindowViewModel()
         {
-            MoveWindowCommand = new DelegateCommand<Window>(MoveWindow);
+           
             ControlVM = new ControlViewModel();
             CamsVM = new CamsViewModel();
             AboutVM = new AboutViewModel();
