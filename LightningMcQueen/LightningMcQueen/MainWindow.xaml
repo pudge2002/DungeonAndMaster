@@ -11,11 +11,10 @@
         Background="AliceBlue"
         AllowsTransparency="True"
         >
-        
+
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
-    
     <Border Background="AliceBlue"
             CornerRadius="20">
         <Grid>

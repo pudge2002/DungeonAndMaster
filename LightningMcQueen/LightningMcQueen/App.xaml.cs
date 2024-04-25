@@ -1,4 +1,5 @@
-﻿using LightningMcQueen.Views;
+﻿using LightningMcQueen.ViewModels;
+using LightningMcQueen.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -11,10 +12,6 @@ namespace LightningMcQueen
     /// </summary>
     public partial class App : PrismApplication
     {
-        //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
-        //{
-        //    moduleCatalog.AddModule<Bootstrapper>();
-        //}
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
@@ -22,7 +19,11 @@ namespace LightningMcQueen
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<MainWindowViewModel>();
+            containerRegistry.RegisterSingleton<ControlViewModel>();
+            containerRegistry.RegisterSingleton<CamsViewModel>();
+            containerRegistry.RegisterSingleton<AboutViewModel>();
         }
+
     }
 }
