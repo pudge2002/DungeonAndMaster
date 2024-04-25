@@ -13,13 +13,14 @@ namespace LightningMcQueen.Views
         public MainWindow()
         {
             InitializeComponent();
-            Window=this;
+            DataContext = new MainWindowViewModel();
         }
         private void MovingWindow(object sender, RoutedEventArgs e)
         {
             if(Mouse.LeftButton==MouseButtonState.Pressed) 
             {
-                MainWindow.Window.DragMove();
+                var viewModel = DataContext as MainWindowViewModel;
+                viewModel?.MoveWindowCommand.Execute(this);
             }
         }
     }

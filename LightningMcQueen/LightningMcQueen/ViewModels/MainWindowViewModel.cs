@@ -1,13 +1,17 @@
-﻿using LightningMcQueen.Core;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using System.Windows;
+using System.Windows.Input;
 
 
 namespace LightningMcQueen.ViewModels
 {
-    class MainWindowViewModel : ObservableObject
+    class MainWindowViewModel : BindableBase
     {
-        public RelayCommand ControlViewCommand { get; set; }
-        public RelayCommand CamsViewCommand { get; set; }
-        public RelayCommand AboutViewCommand { get; set; }
+        public ICommand MoveWindowCommand { get; }
+        public DelegateCommand ControlViewCommand { get; set; }
+        public DelegateCommand CamsViewCommand { get; set; }
+        public DelegateCommand AboutViewCommand { get; set; }
         public ControlViewModel ControlVM { get; set; }
         public CamsViewModel CamsVM { get; set; }
         public AboutViewModel AboutVM { get; set; }
@@ -16,28 +20,31 @@ namespace LightningMcQueen.ViewModels
         public object CurrentView
         {
             get { return _currentView; }
-            set 
-            { 
-                _currentView = value; 
-                OnPropertyChanged(); 
+            set
+            {
+                SetProperty(ref _currentView, value);
             }
         }
-
+        private void MoveWindow(Window window)
+        {
+            window.DragMove();
+        }
         public MainWindowViewModel()
         {
-            ControlVM= new ControlViewModel();
-            CamsVM= new CamsViewModel();
-            AboutVM= new AboutViewModel();
+            MoveWindowCommand = new DelegateCommand<Window>(MoveWindow);
+            ControlVM = new ControlViewModel();
+            CamsVM = new CamsViewModel();
+            AboutVM = new AboutViewModel();
             CurrentView = ControlVM;
-            ControlViewCommand = new RelayCommand(o =>
+            ControlViewCommand = new DelegateCommand(() =>
             {
                 CurrentView = ControlVM;
             });
-            CamsViewCommand = new RelayCommand(o =>
+            CamsViewCommand = new DelegateCommand(() =>
             {
                 CurrentView = CamsVM;
             });
-            AboutViewCommand = new RelayCommand(o =>
+            AboutViewCommand = new DelegateCommand(() =>
             {
                 CurrentView = AboutVM;
             });
