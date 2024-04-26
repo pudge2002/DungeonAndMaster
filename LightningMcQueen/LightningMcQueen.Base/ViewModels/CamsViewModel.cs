@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightningMcQueen.ViewModels
-{
-    class ControlViewModel
-    {
+namespace LightningMcQueen.ViewModels;
 
-    }
+internal class CamsViewModel
+{
 }

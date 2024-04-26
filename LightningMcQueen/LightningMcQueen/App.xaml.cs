@@ -1,4 +1,6 @@
-﻿using LightningMcQueen.ViewModels;
+﻿using LightningMcQueen.About;
+using LightningMcQueen.Base;
+using LightningMcQueen.ViewModels;
 using LightningMcQueen.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -20,10 +22,12 @@ namespace LightningMcQueen
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<MainWindowViewModel>();
-            containerRegistry.RegisterSingleton<ControlViewModel>();
-            containerRegistry.RegisterSingleton<CamsViewModel>();
-            containerRegistry.RegisterSingleton<AboutViewModel>();
         }
-
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog
+                .AddModule<AboutModule>()
+                .AddModule<BaseModule>();
+        }
     }
 }

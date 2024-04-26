@@ -13,15 +13,7 @@
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <DataTemplate DataType="{x:Type viewModel:ControlViewModel}">
-                <view:ControlView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:CamsViewModel}">
-                <view:CamsView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
-                <view:AboutView/>
-            </DataTemplate>
+           
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

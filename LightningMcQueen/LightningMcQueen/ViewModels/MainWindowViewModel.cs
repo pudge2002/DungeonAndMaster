@@ -1,5 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Regions;
+using ReactiveUI;
 using System.Windows;
 using System.Windows.Input;
 
@@ -9,42 +11,28 @@ namespace LightningMcQueen.ViewModels
     class MainWindowViewModel : BindableBase
     {
         
-        public DelegateCommand ControlViewCommand { get; set; }
-        public DelegateCommand CamsViewCommand { get; set; }
-        public DelegateCommand AboutViewCommand { get; set; }
-        public ControlViewModel ControlVM { get; set; }
-        public CamsViewModel CamsVM { get; set; }
-        public AboutViewModel AboutVM { get; set; }
-        private object _currentView;
-
-        public object CurrentView
-        {
-            get { return _currentView; }
-            set
-            {
-                SetProperty(ref _currentView, value);
-            }
-        }
-       
-        public MainWindowViewModel()
+        public ICommand ControlViewCommand { get; set; }
+        public ICommand CamsViewCommand { get; set; }
+        public ICommand AboutViewCommand { get; set; }
+        public ICommand CloseCommand { get; set; }
+        public ICommand DragMoveCommand { get; set; }
+        public MainWindowViewModel(IRegionManager regionManager)
         {
            
-            ControlVM = new ControlViewModel();
-            CamsVM = new CamsViewModel();
-            AboutVM = new AboutViewModel();
-            CurrentView = ControlVM;
             ControlViewCommand = new DelegateCommand(() =>
             {
-                CurrentView = ControlVM;
+                regionManager.RequestNavigate("MainRegion", "ControlView");
             });
             CamsViewCommand = new DelegateCommand(() =>
             {
-                CurrentView = CamsVM;
+                regionManager.RequestNavigate("MainRegion", "CamsView");
             });
             AboutViewCommand = new DelegateCommand(() =>
             {
-                CurrentView = AboutVM;
+                regionManager.RequestNavigate("MainRegion", "AboutView");
             });
+            CloseCommand = ReactiveCommand.Create(Application.Current.Shutdown);
+            DragMoveCommand = ReactiveCommand.Create(Application.Current.MainWindow!.DragMove);
         }   
     }
 }

@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LightningMcQueen.Views"
+             xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="700"
              Background="Azure"
-             HorizontalAlignment="Stretch">
+             HorizontalAlignment="Stretch"
+             d:DataContext="{d:DesignInstace vm:ControlViewModel}"
+             >
               
     <StackPanel>
         <TextBlock Text="Состояние не агломашины"
@@ -18,7 +20,13 @@
                    >
         </TextBlock>
         <StackPanel>
-            <TextBox Height="386" Width="690" HorizontalAlignment="Left" Margin="5" Style="{StaticResource ModernTextbox}"/>
+            <TextBox Height="386"
+                     Width="690"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+
+                     Text="{Binding State,UpdateSourceTrigger=PropertyChanged}"
+                     />
         </StackPanel>
     </StackPanel>
 </UserControl>
