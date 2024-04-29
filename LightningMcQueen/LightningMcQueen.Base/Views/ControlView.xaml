@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="700"
+             d:DesignHeight="600" d:DesignWidth="700"
              Background="Azure"
              HorizontalAlignment="Stretch"
-             d:DataContext="{d:DesignInstace vm:ControlViewModel}"
+              d:DataContext="{d:DesignInstace vm:ControlViewModel}"
              >
-              
-    <StackPanel>
+   
+    <Border CornerRadius="20,20,20,20">
+        <StackPanel >
         <TextBlock Text="Состояние не агломашины"
                    Foreground="Black"
                    FontSize="20"
@@ -20,13 +21,18 @@
                    >
         </TextBlock>
         <StackPanel>
-            <TextBox Height="386"
-                     Width="690"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-
-                     Text="{Binding State,UpdateSourceTrigger=PropertyChanged}"
-                     />
+          
+            <DataGrid Height="550" 
+                     Width="700" d:ItemsSource="{d:SampleData ItemCount=5} " Background="Transparent"
+                    
+                      >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header ="Дата и время" Width="150"/>
+                    <DataGridTextColumn Header ="Состояние" Width="400"/>
+                </DataGrid.Columns>
+            </DataGrid>
+           
         </StackPanel>
     </StackPanel>
+    </Border>
 </UserControl>
