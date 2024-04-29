@@ -49,8 +49,6 @@
             <ContentControl Grid.Row="1"
                              Grid.Column="1"
                              prism:RegionManager.RegionName="MainRegion"/>
-                             Content="{Binding CurrentView}"/>
-                             Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>
