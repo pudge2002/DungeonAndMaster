@@ -5,6 +5,7 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:components="clr-namespace:LightningMcQueen.Components"
         Title="Агломашина"
         Height="700" Width="900"
         WindowStyle="None"
@@ -14,8 +15,21 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstace viewModel:MainWindowViewModel}"
         >
+        <Border CornerRadius="20,20,20,20">
+        <DockPanel  Background="Black">
+        <components:Header DockPanel.Dock="Top"/>
+        <Border CornerRadius="0 0 20 20" BorderBrush="Blue" BorderThickness="2">
+            <Grid>
+                <ContentControl Grid.Row="1"
+                     Grid.Column="1"
+                     prism:RegionManager.RegionName="MainRegion"/>
+            </Grid>
 
-    <Border Background="AliceBlue"
+        </Border>
+        </DockPanel>
+        </Border>
+
+    <!--<Border 
             CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -50,5 +64,5 @@
                              Grid.Column="1"
                              prism:RegionManager.RegionName="MainRegion"/>
         </Grid>
-    </Border>
+    </Border>-->
 </Window>
