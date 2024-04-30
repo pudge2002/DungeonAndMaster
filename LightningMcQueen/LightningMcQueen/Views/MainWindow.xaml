@@ -13,6 +13,7 @@
         Background="AliceBlue"
         AllowsTransparency="True"
         mc:Ignorable="d"
+        
         d:DataContext="{d:DesignInstace viewModel:MainWindowViewModel}"
         >
         <Border CornerRadius="20,20,20,20">
