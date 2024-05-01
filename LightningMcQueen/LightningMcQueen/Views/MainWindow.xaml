@@ -18,7 +18,7 @@
     <Border CornerRadius="20">
         <DockPanel  Background="Transparent">
             <components:Header DockPanel.Dock="Top"/>
-            <Border CornerRadius="0,0,20,20" BorderBrush="Azure" BorderThickness="2">
+            <Border CornerRadius="0,0,10,10" BorderBrush="Azure" BorderThickness="2">
                 <Grid>
                     <ContentControl Grid.Row="1"
                      Grid.Column="1"
