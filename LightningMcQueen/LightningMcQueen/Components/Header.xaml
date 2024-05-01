@@ -34,7 +34,7 @@
             <Setter Property="FontSize" Value="24"/>
         </Style>
     </UserControl.Resources>
-    <Border CornerRadius="5 5 0 0" Background="#6698e4">
+    <Border CornerRadius="10 10 0 0" Background="#6698e4">
         <Border.InputBindings>
             <MouseBinding MouseAction="LeftClick" Command="{Binding DragMoveCommand}"/>
         </Border.InputBindings>
