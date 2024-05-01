@@ -6,33 +6,46 @@
              xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="700"
-             Background="Azure"
+             Background="Transparent"
              HorizontalAlignment="Stretch"
-              d:DataContext="{d:DesignInstace vm:ControlViewModel}"
+             
              >
-   
-    <Border CornerRadius="20,20,20,20">
-        <StackPanel >
-        <TextBlock Text="Состояние не агломашины"
-                   Foreground="Black"
-                   FontSize="20"
-                   HorizontalAlignment="Stretch"
-                   Margin="20,10,0,10"
-                   >
-        </TextBlock>
-        <StackPanel>
-          
-            <DataGrid Height="550" 
-                     Width="700" d:ItemsSource="{d:SampleData ItemCount=5} " Background="Transparent"
-                    
+   <!--d:DataContext="{d:DesignInstace vm:ControlViewModel}"-->
+    <Border CornerRadius="0,0,10,10" Background="Azure">
+        <StackPanel Height="620" VerticalAlignment="Top" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Состояние агломашины"
+               Foreground="Black"
+               FontSize="20"
+               FontFamily="Bahnschrift SemiBold SemiCondensed"
+               FontWeight="Bold"
+               HorizontalAlignment="Left"
+               Margin="10,10,0,0"/>
+
+                <Border Grid.Row="1"
+            Height="2"
+            Background="Black"
+            Margin="10,10,10,10"/>
+            </Grid>
+            <StackPanel>
+
+                <DataGrid Height="600" 
+                     Width="700" BorderBrush="AliceBlue" d:ItemsSource="{d:SampleData ItemCount=12} " Foreground="Black" Background="#FFA6CED6" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" HorizontalGridLinesBrush="#FF76AEDA" VerticalGridLinesBrush="#FF76AEDA" GridLinesVisibility="None" AlternatingRowBackground="Azure" RowBackground="#FFA6CED6" Margin="0,10,0,0" FontFamily="Bahnschrift SemiBold SemiCondensed"
+                     
                       >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header ="Дата и время" Width="150"/>
-                    <DataGridTextColumn Header ="Состояние" Width="400"/>
-                </DataGrid.Columns>
-            </DataGrid>
-           
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header ="№" Width="25"/>
+                        <DataGridTextColumn Header ="Дата и время" Width="170"/>
+                        <DataGridTextColumn Header ="Состояние" Width="500"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
     </Border>
 </UserControl>
