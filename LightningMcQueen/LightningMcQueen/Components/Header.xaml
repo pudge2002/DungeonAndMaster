@@ -9,9 +9,9 @@
               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="33" d:DesignWidth="800"
-           d:DataContext="{d:DesignInstace viewModel:MainWindowViewModel}"
-             >
-    
+            d:DataContext="{d:DesignInstace viewModel:MainWindowViewModel}"
+              >
+
     <UserControl.Resources>
         <Style TargetType="Path">
             <Setter Property="StrokeThickness" Value="5"/>
@@ -42,42 +42,60 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="Auto" MinWidth="301"/>
+                <ColumnDefinition Width="Auto" MinWidth="265.5"/>
                 <ColumnDefinition Width="Auto" MinWidth="44"/>
             </Grid.ColumnDefinitions>
-            <md:PackIcon  Kind="ApplicationBraces"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Center"
-              Foreground="{DynamicResource SecondaryHueMidBrush}"
-              Width="30"
-              Height="30"/>
             <TextBlock Text="АГЦ-3 Агломашина 11" 
-                   Grid.Column="1" Margin="5,5,5,5"/>
+                   Grid.Column="1" Margin="5,10,5,5"
+                   FontFamily="Bahnschrift SemiBold SemiCondensed"/>
 
-            <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="61,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="249">
-                <RadioButton Content="Состояние" 
-                             Style="{StaticResource MenuButtonTheme}" 
-                             Width="83"
-                             Height="30" 
-                             IsChecked="True"
-                             Command="{Binding ControlViewCommand}"/>
-                <RadioButton Content="Камера" 
-                             Style="{StaticResource MenuButtonTheme}"
-                             Width="64" Height="30" 
-                             Command="{Binding CamsViewCommand}"/>
-                <RadioButton Content="О программе"  
-                             Style="{StaticResource MenuButtonTheme}"
-                             Width="99"
-                             Height="30"
-                             Command="{Binding AboutViewCommand}"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="2"
+            Margin="0,0,0,0" Grid.ColumnSpan="2"
+            HorizontalAlignment="Center" Width="249">
+                <RadioButton Content="Состояние"
+                 Style="{StaticResource MenuButtonTheme}"
+                 Height="30"
+                 IsChecked="True"
+                 FontSize="15"
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 Command="{Binding ControlViewCommand}"
+                 HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Center"/>
+                <RadioButton Content="Камера"
+                 Style="{StaticResource MenuButtonTheme}"
+                 Height="30"
+                 FontSize="15"
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 Command="{Binding CamsViewCommand}"
+                 HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Center"/>
+                <RadioButton Content="О программе"
+                 Style="{StaticResource MenuButtonTheme}"
+                 Height="30"
+                 FontSize="15"
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 Command="{Binding AboutViewCommand}"
+                 HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Center"/>
             </StackPanel>
 
-            <Button Content="X" 
-                Padding="0"
-                Background="IndianRed"
-                Grid.Column="3" 
-                
-                Command="{Binding CloseCommand}" Margin="9,0,0,0"/>
+            <Button Padding="0"
+        Background="Red"
+        Grid.Column="3"
+        Command="{Binding CloseCommand}"
+        Margin="9,0,0,0"
+        Style="{StaticResource RoundedButton}">
+                <Image Source="/Images/exit.png"
+           Width="16"
+           Height="16"/>
+            </Button>
+
+
+            <Image Source="/Images/logo.png"
+                 Width="30"
+                Height="30"
+                VerticalAlignment="Center"
+                 HorizontalAlignment="Center"/>
 
         </Grid>
     </Border>
