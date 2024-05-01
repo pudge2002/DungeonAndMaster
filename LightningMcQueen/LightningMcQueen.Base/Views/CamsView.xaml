@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="700"
              Background="Transparent"
-             d:DataContext="{d:DesignInstace vm:CamsViewModel}">
+             d:DataContext="{d:DesignInstace vm:CamsViewModel}"
+             >
+    
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel>
             <Grid>
