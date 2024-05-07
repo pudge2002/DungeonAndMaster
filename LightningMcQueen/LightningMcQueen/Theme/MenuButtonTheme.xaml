@@ -14,6 +14,7 @@
                             <TextBlock Text="{TemplateBinding Property=Content}"
                                        VerticalAlignment="Center"
                                        Margin="10, 0,10,0"
+                                       
                                        />
                                         
                         </Grid>
@@ -33,11 +34,14 @@
                 <Setter Property="Background" Value="LightBlue"/>
                 <Setter Property="BorderBrush" Value="LightBlue"/>
                 <Setter Property="Foreground" Value="Black"/>
-
-               
                 
-
             </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                 <Setter Property="Background" Value="AliceBlue"/>
+                 <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+                
         </Style.Triggers>
         
     </Style>
