@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800"             
              Background="Transparent"
-             
+             d:DataContext="{d:DesignInstace vm:AboutView}"
              >
-    <!--d:DataContext="{d:DesignInstace vm:AboutView}"-->
+    
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel>
             <Grid>
@@ -80,28 +80,50 @@
                             Margin="20,10,0,10"
                             Height="50"
                              TextWrapping="Wrap">Версия приложения <LineBreak/> 1.0</TextBlock>
-
                 <TextBlock Text="Разработчики: watermelon group"
-               Grid.Column="1"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Left"
-                    Margin="196,0,0,0" 
-                    Width="144" FontFamily="Bahnschrift SemiBold SemiCondensed"
-
-                 FontSize="18"
-
-
-                 Height="50"
-                 TextWrapping="Wrap"          >
-                    <TextBlock.Foreground>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF1C6708" Offset="0.035"/>
-                            <GradientStop Color="#FF13A750" Offset="0.792"/>
-                            <GradientStop Color="#FF2FA90E" Offset="0.419"/>
-                            <GradientStop Color="#FF21371C" Offset="0.195"/>
-                        </LinearGradientBrush>
-                    </TextBlock.Foreground>
+           Grid.Column="1"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Left"
+           Margin="196,0,0,0"
+           Width="144"
+           FontFamily="Bahnschrift SemiBold SemiCondensed"
+           FontSize="18"
+           Height="50"
+           TextWrapping="Wrap">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="#FF1C6708"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                            To="#EE204D"
+                                            Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                            To="#FF1C6708"
+                                            Duration="0:0:0.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
                 </TextBlock>
+                
+
+
+
             </Grid>
 
             <!--<TextBlock
