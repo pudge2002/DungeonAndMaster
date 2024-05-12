@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             
+             xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              xmlns:local="clr-namespace:LightningMcQueen.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="700"
              Background="Transparent"
-             d:DataContext="{d:DesignInstace vm:CamsViewModel}"
+             d:DataContext="{d:DesignInstance vm:CamsViewModel}"
              >
-    
+
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel>
             <Grid>
@@ -32,6 +32,7 @@
              Background="Black"
                Margin="10,10,10,10"/>
             </Grid>
+            <MediaElement Height="380" Width="550"/>
         </StackPanel>
     </Border>
 </UserControl>
