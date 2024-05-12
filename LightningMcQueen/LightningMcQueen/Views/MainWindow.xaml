@@ -13,7 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         mc:Ignorable="d"
-         d:DataContext="{d:DesignInstace viewModel:MainWindowViewModel}"
+         d:DataContext="{d:DesignInstance viewModel:MainWindowViewModel}"
          > 
     <Border CornerRadius="20">
         <DockPanel  Background="Transparent">
