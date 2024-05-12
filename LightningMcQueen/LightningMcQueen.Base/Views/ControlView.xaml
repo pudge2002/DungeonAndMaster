@@ -8,7 +8,7 @@
              d:DesignHeight="600" d:DesignWidth="700"
              Background="Transparent"
              HorizontalAlignment="Stretch"
-             d:DataContext="{d:DesignInstace vm:ControlViewModel}"
+             d:DataContext="{d:DesignInstance vm:ControlViewModel}"
              > 
   
     <Border CornerRadius="0,0,10,10" Background="Azure">
