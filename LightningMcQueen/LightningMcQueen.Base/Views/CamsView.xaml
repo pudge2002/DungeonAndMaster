@@ -30,9 +30,16 @@
                 <Border Grid.Row="1"
              Height="2"
              Background="Black"
-               Margin="10,10,10,10"/>
+             Margin="10,10,10,10"/>
             </Grid>
-            <MediaElement Height="380" Width="550"/>
+            <MediaElement
+                Height="380"
+                Width="550"
+                x:Name="mediaElement"
+                Source="{Binding VideoPath}"
+                LoadedBehavior="Play"
+                Volume="0"
+                />
         </StackPanel>
     </Border>
 </UserControl>

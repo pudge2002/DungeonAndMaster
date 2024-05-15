@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alturos.Yolo", "Alturos.Yolo\Alturos.Yolo.csproj", "{8A450167-47B1-4596-9F84-B83BCF7B6D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightningMcQueen.About", "LightningMcQueen.About\LightningMcQueen.About.csproj", "{D4D60448-B7C2-4752-B782-9040FFBE2984}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightningMcQueen.About", "LightningMcQueen.About\LightningMcQueen.About.csproj", "{D4D60448-B7C2-4752-B782-9040FFBE2984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightningMcQueen.Base", "LightningMcQueen.Base\LightningMcQueen.Base.csproj", "{007B948E-B0BA-4899-BA47-8C7D9E970DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightningMcQueen.Base", "LightningMcQueen.Base\LightningMcQueen.Base.csproj", "{007B948E-B0BA-4899-BA47-8C7D9E970DA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
