@@ -9,8 +9,8 @@
              Background="Transparent"
              HorizontalAlignment="Stretch"
              d:DataContext="{d:DesignInstance vm:ControlViewModel}"
-             > 
-  
+             >
+
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel Height="620" VerticalAlignment="Top" >
             <Grid>
@@ -35,8 +35,8 @@
             <StackPanel>
 
                 <DataGrid
-                    Height="436" 
-                    Width="650"
+                    Height="525" 
+                    Width="680"
                     BorderBrush="AliceBlue"
                     d:ItemsSource="{d:SampleData ItemCount=12} "
                     Foreground="Black"
@@ -58,20 +58,11 @@
                 >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header ="№" Width="25" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header ="Дата и время" Width="170" Binding="{Binding dateOnly}"/>
+                        <DataGridTextColumn Header ="Дата и время" Width="170" Binding="{Binding dateTime, StringFormat={}{0:dd-MM-yyyy HH:mm:ss}}"/>
                         <DataGridTextColumn Header ="Состояние" Width="420" Binding="{Binding Capital}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Content="Add New State" 
-                        Command="{Binding AddCommand}" 
-                        Height="30"
-                        Width="100"
-                        />
-                <Button Content="Save to file" 
-                        Command="{Binding SaveCommand}" 
-                        Height="30"
-                        Width="100"
-        />
+
             </StackPanel>
         </StackPanel>
     </Border>

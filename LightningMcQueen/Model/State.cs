@@ -9,7 +9,7 @@ namespace Model
     public class State
     {
         public int Id { get; set; }
-        public DateOnly dateOnly { get; set; }
+        public DateTime dateTime { get; set; }
         public string Capital { get; set; }
     }
 }
