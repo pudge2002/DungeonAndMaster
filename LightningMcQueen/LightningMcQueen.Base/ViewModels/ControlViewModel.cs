@@ -36,7 +36,7 @@ internal class ControlViewModel : ReactiveObject
     private void AddNewState()
     {
         
-        States.Add(new State { Id = 1, dateOnly = DateOnly.FromDateTime(DateTime.Now), Capital = "Moscow" });
+        States.Add(new State { Id = States.Count, dateOnly = DateOnly.FromDateTime(DateTime.Now), Capital = "Moscow" });
     }
     private void SaveToFile()
     {
