@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              xmlns:local="clr-namespace:LightningMcQueen.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="700"
+             d:DesignHeight="600" d:DesignWidth="700"
              Background="Transparent"
              d:DataContext="{d:DesignInstance vm:CamsViewModel}"
              >
@@ -32,14 +32,17 @@
              Background="Black"
              Margin="10,10,10,10"/>
             </Grid>
-            <MediaElement
-                Height="380"
-                Width="550"
+            <Grid Margin="20" Height="500" Width="700">
+                <MediaElement
                 x:Name="mediaElement"
                 Source="{Binding VideoPath}"
                 LoadedBehavior="Play"
                 Volume="0"
-                />
+                Stretch="UniformToFill"
+            />  
+            </Grid>
+
+
         </StackPanel>
     </Border>
 </UserControl>
