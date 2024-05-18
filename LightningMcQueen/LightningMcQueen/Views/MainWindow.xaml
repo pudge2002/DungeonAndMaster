@@ -7,7 +7,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:components="clr-namespace:LightningMcQueen.Components"
         Title="Агломашина"
-        Height="800" Width="900"
+        Height="650" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
