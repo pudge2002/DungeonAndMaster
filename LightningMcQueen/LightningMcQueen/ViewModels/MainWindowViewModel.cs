@@ -13,6 +13,7 @@ namespace LightningMcQueen.ViewModels
         
         public ICommand ControlViewCommand { get; set; }
         public ICommand CamsViewCommand { get; set; }
+        public ICommand HistoryViewCommand { get; set; }
         public ICommand AboutViewCommand { get; set; }
         public ICommand CloseCommand { get; set; }
         public ICommand DragMoveCommand { get; set; }
@@ -26,6 +27,10 @@ namespace LightningMcQueen.ViewModels
             CamsViewCommand = new DelegateCommand(() =>
             {
                 regionManager.RequestNavigate("MainRegion", "CamsView");
+            });
+            HistoryViewCommand = new DelegateCommand(() =>
+            {
+                regionManager.RequestNavigate("MainRegion", "HistoryView");
             });
             AboutViewCommand = new DelegateCommand(() =>
             {
