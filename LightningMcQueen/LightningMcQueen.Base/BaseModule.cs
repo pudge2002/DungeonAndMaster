@@ -13,6 +13,8 @@ namespace LightningMcQueen.Base
                 .RegisterForNavigation<ControlView>();
             containerRegistry
                 .RegisterForNavigation<CamsView>();
+            containerRegistry
+               .RegisterForNavigation<HistoryView>();
         }
 
         public void OnInitialized(IContainerProvider containerProvider)
