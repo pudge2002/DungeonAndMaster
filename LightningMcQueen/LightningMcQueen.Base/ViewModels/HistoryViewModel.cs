@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Model;
 using Newtonsoft.Json;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +17,7 @@ namespace LightningMcQueen.ViewModels
 {
     internal class HistoryViewModel : ReactiveObject
     {
+        [Reactive] public string filename { get; set; }
         public ObservableCollection<State> ShowableStates { get; set; }=new ObservableCollection<State>();
         public ReactiveCommand<Unit, Unit> OpenFileCommand { get; private set; }
         public HistoryViewModel()
@@ -37,14 +39,21 @@ namespace LightningMcQueen.ViewModels
             {
                 // Get the path of the selected file
                 string filePath = openFileDialog.FileName;
-
+                filename=Path.GetFileName(filePath);
                 // Read the contents of the file
                 string json =File.ReadAllText(filePath);
 
 
                 // Deserialize the JSON string into a list of states
-                ShowableStates = JsonConvert.DeserializeObject<ObservableCollection<State>>(json);
-
+                
+                ObservableCollection<State> newStates = JsonConvert.DeserializeObject<ObservableCollection<State>>(json);
+                ShowableStates.Clear();
+                foreach (State state in newStates)
+                {
+                    ShowableStates.Add(state);
+                    
+                }
+                newStates.Clear();
             }
         }
     }

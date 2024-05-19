@@ -40,6 +40,7 @@ internal class ControlViewModel : ReactiveObject
             {
                 AddNewState();
             });
+
     }
     private void SaveToFile()
     {
@@ -63,7 +64,7 @@ internal class ControlViewModel : ReactiveObject
     }
     private void StartDailySaveTimer()
     {
-        TimeSpan saveInterval = TimeSpan.FromMinutes(1);
+        TimeSpan saveInterval = TimeSpan.FromDays(1);
         TimeSpan dueTime = TimeSpan.FromSeconds(10); // Запустить первое сохранение через 10 секунд
 
         _dailySaveTimer = Observable.Timer(dueTime, saveInterval)

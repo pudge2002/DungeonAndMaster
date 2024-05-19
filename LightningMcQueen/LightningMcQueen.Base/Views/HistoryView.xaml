@@ -36,14 +36,14 @@
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="btnBrowse" Content="Выбрать файл"  Margin="5" FontFamily="Bahnschrift SemiBold SemiCondensed" Background="#FFA6CED6" Height="24" Width="103" BorderBrush="{x:Null}" FontSize="14" Cursor="Hand" Command="{Binding OpenFileCommand}"/>
                     <TextBlock Margin="5,0,0,0" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" VerticalAlignment="Center">Открыт файл:</TextBlock>
-                    <TextBlock x:Name="txtFileName" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="txtFileName" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding filename}"/>
                 </StackPanel>
                 <!--Click="btnBrowse_Click"-->
                 <DataGrid
                         Height="491"
                        Width="680"
                         BorderBrush="AliceBlue"
-                        d:ItemsSource="{d:SampleData ItemCount=12} "
+                       
                         Foreground="Black"
                         Background="#FFA6CED6"
                         CanUserReorderColumns="False"
@@ -59,9 +59,10 @@
                         CanUserAddRows="False"
                         IsReadOnly="True" IsManipulationEnabled="True" AllowDrop="True" IsTextSearchEnabled="True" IsTabStop="True" AutoGenerateColumns="False" EnableColumnVirtualization="True"
                         ItemsSource="{Binding ShowableStates}"
+                        
                         >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header ="№" Width="25" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header ="№" Width="50" Binding="{Binding Id}"/>
                         <DataGridTextColumn Header ="Дата и время" Width="170" Binding="{Binding dateTime, StringFormat={}{0:dd-MM-yyyy HH:mm:ss}}"/>
                         <DataGridTextColumn Header ="Состояние" Width="420" Binding="{Binding Capital}"/>
                     </DataGrid.Columns>
