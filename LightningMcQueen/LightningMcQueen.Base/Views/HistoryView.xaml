@@ -8,9 +8,9 @@
              d:DesignHeight="600" d:DesignWidth="700"
              Background="Transparent"
              HorizontalAlignment="Stretch"
-             
+             d:DataContext="{d:DesignInstance vm:HistoryViewModel}"
              >
-    <!--d:DataContext="{d:DesignInstance vm:HistoryViewModel}"-->
+   
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel Height="620" VerticalAlignment="Top" >
             <Grid>
@@ -34,7 +34,7 @@
             </Grid>
             <StackPanel  Width="680">
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnBrowse" Content="Выбрать файл"  Margin="5" FontFamily="Bahnschrift SemiBold SemiCondensed" Background="#FFA6CED6" Height="24" Width="103" BorderBrush="{x:Null}" FontSize="14" Cursor="Hand"/>
+                    <Button x:Name="btnBrowse" Content="Выбрать файл"  Margin="5" FontFamily="Bahnschrift SemiBold SemiCondensed" Background="#FFA6CED6" Height="24" Width="103" BorderBrush="{x:Null}" FontSize="14" Cursor="Hand" Command="{Binding OpenFileCommand}"/>
                     <TextBlock Margin="5,0,0,0" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" VerticalAlignment="Center">Открыт файл:</TextBlock>
                     <TextBlock x:Name="txtFileName" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
@@ -58,6 +58,7 @@
                         FontFamily="Bahnschrift SemiBold SemiCondensed"
                         CanUserAddRows="False"
                         IsReadOnly="True" IsManipulationEnabled="True" AllowDrop="True" IsTextSearchEnabled="True" IsTabStop="True" AutoGenerateColumns="False" EnableColumnVirtualization="True"
+                        ItemsSource="{Binding ShowableStates}"
                         >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header ="№" Width="25" Binding="{Binding Id}"/>

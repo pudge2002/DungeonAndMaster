@@ -43,9 +43,8 @@ namespace LightningMcQueen.ViewModels
 
 
                 // Deserialize the JSON string into a list of states
-                ShowableStates = new ObservableCollection<State>(JsonConvert.DeserializeObject<ObservableCollection<State>>(json));
+                ShowableStates = JsonConvert.DeserializeObject<ObservableCollection<State>>(json);
 
-                ShowableStates.Add(new State { Id = ShowableStates.Count, dateTime = DateTime.Now, Capital = "capital" });
             }
         }
     }
