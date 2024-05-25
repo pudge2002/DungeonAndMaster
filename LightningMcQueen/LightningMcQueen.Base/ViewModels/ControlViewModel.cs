@@ -28,7 +28,7 @@ internal class ControlViewModel : ReactiveObject
             capital = "Error";
         }
 
-        States.Add(new State { Id = States.Count + 1, dateTime = DateTime.Now, Capital = capital });
+        States.Insert(0, new State { Id = States.Count + 1, dateTime = DateTime.Now, Capital = capital });
 
         if (DateTime.Now.TimeOfDay.Ticks % TimeSpan.TicksPerDay >= (new TimeSpan(0,0,0)).Ticks 
             && DateTime.Now.TimeOfDay.Ticks % TimeSpan.TicksPerDay < (new TimeSpan(0, 0, 1)).Ticks
