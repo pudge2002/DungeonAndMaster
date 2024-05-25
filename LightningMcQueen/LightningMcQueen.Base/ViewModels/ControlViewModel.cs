@@ -61,10 +61,7 @@ internal class ControlViewModel : ReactiveObject
         string fileName = $"states_{DateTime.Now:dd-MM-yyyy_HH-mm}.json";
         string filePath = Path.Combine(folderPath, fileName);
 
-        if (!Directory.Exists(folderPath))
-        {
-            Directory.CreateDirectory(folderPath);
-        }
+        CreateDirectory();
 
         // Convert the States list to JSON
         string statesJson = JsonConvert.SerializeObject(States, Newtonsoft.Json.Formatting.Indented);
