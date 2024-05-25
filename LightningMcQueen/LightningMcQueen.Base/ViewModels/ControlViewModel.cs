@@ -16,8 +16,8 @@ namespace LightningMcQueen.ViewModels;
 
 internal class ControlViewModel : ReactiveObject
 {
-    private IDisposable _dailySaveTimer;
     private IDisposable _stateTimer;
+
     private Random _random = new Random();
     public ObservableCollection<State> States { get; set; } = new ObservableCollection<State>();
     private void AddNewState()
@@ -27,7 +27,16 @@ internal class ControlViewModel : ReactiveObject
         {
             capital = "Error";
         }
-        States.Add(new State { Id = States.Count+1, dateTime = DateTime.Now, Capital = capital });
+
+        States.Add(new State { Id = States.Count + 1, dateTime = DateTime.Now, Capital = capital });
+
+        if (DateTime.Now.TimeOfDay.Ticks % TimeSpan.TicksPerDay >= (new TimeSpan(0,0,0)).Ticks 
+            && DateTime.Now.TimeOfDay.Ticks % TimeSpan.TicksPerDay < (new TimeSpan(0, 0, 1)).Ticks
+            )
+        {
+            SaveToFileWithClear();
+        }
+
     }
     private void StartStateTimer()
     {
@@ -39,6 +48,7 @@ internal class ControlViewModel : ReactiveObject
             .Subscribe(_ =>
             {
                 AddNewState();
+
             });
 
     }
@@ -62,20 +72,7 @@ internal class ControlViewModel : ReactiveObject
         // Save the JSON string to the file
         File.WriteAllText(filePath, statesJson);
     }
-    private void StartDailySaveTimer()
-    {
-        TimeSpan saveInterval = TimeSpan.FromDays(1);
-        TimeSpan dueTime = TimeSpan.FromSeconds(10); // Запустить первое сохранение через 10 секунд
 
-        _dailySaveTimer = Observable.Timer(dueTime, saveInterval)
-            .SubscribeOn(RxApp.TaskpoolScheduler) // Запустить таймер в пуле потоков
-            .ObserveOn(RxApp.MainThreadScheduler) // Переключиться на главный поток для обновления UI
-            .Subscribe(_ =>
-            {
-               SaveToFileWithClear();
-            });
-
-    }
     private void SaveToFileWithClear()
     {
         try
@@ -95,11 +92,23 @@ internal class ControlViewModel : ReactiveObject
         {
             States.Clear();
         });
-    
-}
+    }
+
+    private void CreateDirectory()
+    {
+        string exePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+
+        string folderPath = exePath + "\\States";
+
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+    }
+
     public ControlViewModel()
     {
-        StartDailySaveTimer();
+        CreateDirectory();
         StartStateTimer();
     }
 }
