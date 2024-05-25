@@ -24,5 +24,7 @@ namespace LightningMcQueen.Views
         {
             InitializeComponent();
         }
+
+       
     }
 }

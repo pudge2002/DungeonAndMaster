@@ -38,7 +38,8 @@
                     Height="525" 
                     Width="680"
                     BorderBrush="AliceBlue"
-                    d:ItemsSource="{d:SampleData ItemCount=12} "
+                    ScrollViewer.CanContentScroll="True"
+                    
                     Foreground="Black"
                     Background="#FFA6CED6" 
                     CanUserReorderColumns="False"
@@ -54,7 +55,7 @@
                     ItemsSource="{Binding States}"
                     AutoGenerateColumns="False"
                     CanUserAddRows="False"
-                    IsReadOnly="True"
+                    IsReadOnly="True" IsSynchronizedWithCurrentItem="True" CanUserResizeRows="False"
                 >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header ="№" Width="50" Binding="{Binding Id}"/>

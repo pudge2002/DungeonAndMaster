@@ -12,7 +12,7 @@ namespace LightningMcQueen.Views
         public static MainWindow Window;
         public MainWindow()
         {
-            InitializeComponent();
+               InitializeComponent();
             
         }
       

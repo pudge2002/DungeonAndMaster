@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="700"
+             d:DesignHeight="600" d:DesignWidth="790"
              Background="Transparent"
              HorizontalAlignment="Stretch"
              d:DataContext="{d:DesignInstance vm:HistoryViewModel}"
              >
-   
+
     <Border CornerRadius="0,0,10,10" Background="Azure">
         <StackPanel Height="620" VerticalAlignment="Top" >
             <Grid>
@@ -32,12 +32,105 @@
             Background="Black"
             Margin="10,10,10,10"/>
             </Grid>
-            <StackPanel  Width="680">
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnBrowse" Content="Выбрать файл"  Margin="5" FontFamily="Bahnschrift SemiBold SemiCondensed" Background="#FFA6CED6" Height="24" Width="103" BorderBrush="{x:Null}" FontSize="14" Cursor="Hand" Command="{Binding OpenFileCommand}"/>
-                    <TextBlock Margin="5,0,0,0" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" VerticalAlignment="Center">Открыт файл:</TextBlock>
-                    <TextBlock x:Name="txtFileName" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding filename}"/>
+            <StackPanel  Width="780">
+                <StackPanel Orientation="Horizontal" Width="767">
+                    <Button x:Name="btnBrowse"
+            Content="Выбрать файл"
+            Margin="5"
+            FontFamily="Bahnschrift SemiBold SemiCondensed"
+            Background="#FFA6CED6"
+            Height="24"
+            Width="103"
+            BorderBrush="{x:Null}"
+            FontSize="14"
+            Cursor="Hand"
+            Command="{Binding OpenFileCommand}"/>
+                    <TextBlock Margin="5,0,0,0"
+               FontFamily="Bahnschrift SemiBold SemiCondensed"
+               FontSize="14"
+               VerticalAlignment="Center">
+        Открыт файл:
+                    </TextBlock>
+                    <TextBlock x:Name="txtFileName"
+               FontFamily="Bahnschrift SemiBold SemiCondensed"
+               FontSize="14"
+               Margin="5,0,0,0"
+               VerticalAlignment="Center"
+               Text="{Binding filename}"/>
+                    <StackPanel Orientation="Horizontal" Width="476" Margin="10,0,0,0" RenderTransformOrigin="0.588,0.477" Height="31">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.184"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.304"/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <TextBlock Text=" Время от"
+                            FontFamily="Bahnschrift SemiBold SemiCondensed"
+                            FontSize="14"
+                            VerticalAlignment="Center"
+                            Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cmbHoursFrom"
+                  ItemsSource="{Binding Hours}"
+                  SelectedItem="{Binding HourFrom, Mode=TwoWay}"
+                  FontFamily="Bahnschrift SemiBold SemiCondensed"
+                  FontSize="14"
+                  VerticalAlignment="Center"
+                  Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cmbMinutesFrom"
+                  ItemsSource="{Binding Minutes}"
+                  SelectedItem="{Binding MinuteFrom, Mode=TwoWay}"
+                  FontFamily="Bahnschrift SemiBold SemiCondensed"
+                  FontSize="14"
+                  VerticalAlignment="Center"
+                  Margin="0,0,5,0"/>
+                        <TextBlock Text="до"
+                   FontFamily="Bahnschrift SemiBold SemiCondensed"
+                   FontSize="14"
+                   VerticalAlignment="Center"
+                   Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cmbHoursTo"
+                  ItemsSource="{Binding Hours}"
+                  SelectedItem="{Binding HourTo, Mode=TwoWay}"
+                  FontFamily="Bahnschrift SemiBold SemiCondensed"
+                  FontSize="14"
+                  VerticalAlignment="Center"
+                  Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cmbMinutesTo"
+                  ItemsSource="{Binding Minutes}"
+                  SelectedItem="{Binding MinuteTo, Mode=TwoWay}"
+                  FontFamily="Bahnschrift SemiBold SemiCondensed"
+                  FontSize="14"
+                  VerticalAlignment="Center"
+                  Margin="0,0,0,0"/>
+                        <Button Content="Применить"
+                                
+                                FontFamily="Bahnschrift SemiBold SemiCondensed"
+                                 Margin="5"
+                                
+                                 Background="#FFA6CED6"
+                                 Height="24"
+                                 Width="75"
+                                 BorderBrush="{x:Null}"
+                                 FontSize="14"
+                                 Cursor="Hand"/>
+                        <Button Content="Отчистить"
+                                FontFamily="Bahnschrift SemiBold SemiCondensed"
+                                 Margin="5"
+
+                                 Background="#FFA6CED6"
+                                 Height="24"
+                                 Width="75"
+                                 BorderBrush="{x:Null}"
+                                 FontSize="14"
+                                Cursor="Hand"/>
+
+                    </StackPanel>
                 </StackPanel>
+
+
+
                 <!--Click="btnBrowse_Click"-->
                 <DataGrid
                         Height="491"
@@ -48,7 +141,7 @@
                         Background="#FFA6CED6"
                         CanUserReorderColumns="False"
                         CanUserResizeColumns="False"
-                        CanUserSortColumns="False"
+                        CanUserSortColumns="True"
                         HorizontalGridLinesBrush="#FF76AEDA"
                         VerticalGridLinesBrush="#FF76AEDA"
                         GridLinesVisibility="None"

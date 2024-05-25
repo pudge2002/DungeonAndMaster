@@ -10,10 +10,10 @@
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
-                            
+
                             <TextBlock Text="{TemplateBinding Property=Content}"
                                        VerticalAlignment="Center"
-                                       Margin="10, 0,10,0"
+                                        Margin="10, 0,10,0"
                                        
                                        />
                                         
