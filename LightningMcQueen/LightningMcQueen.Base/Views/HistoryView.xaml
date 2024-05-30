@@ -72,14 +72,14 @@
                             FontSize="14"
                             VerticalAlignment="Center"
                             Margin="0,0,5,0"/>
-                        <xctk:TimePicker x:Name="FromTimePicker" Margin="0,0,5,0"/>
+                        <xctk:TimePicker x:Name="FromTimePicker" Margin="0,0,5,0" Value="{Binding From, Mode=TwoWay}" />
                         <TextBlock Text="до"
                    FontFamily="Bahnschrift SemiBold SemiCondensed"
                    FontSize="14"
                    VerticalAlignment="Center"
                    Margin="0,0,5,0"/>
-                        <xctk:TimePicker x:Name="ToTimePicker" />
-                        <Button Content="Применить"
+                        <xctk:TimePicker x:Name="ToTimePicker" Value="{Binding To, Mode=TwoWay}"/>
+                        <Button Content="Применить" Command="{Binding FilterCommand}"
                                 
                                 FontFamily="Bahnschrift SemiBold SemiCondensed"
                                  Margin="5"
@@ -90,7 +90,7 @@
                                  BorderBrush="{x:Null}"
                                  FontSize="14"
                                  Cursor="Hand"/>
-                        <Button Content="Отчистить"
+                        <Button Content="Отчистить" Command="{Binding ClearFilterCommand}"
                                 FontFamily="Bahnschrift SemiBold SemiCondensed"
                                  Margin="5"
 
