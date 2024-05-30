@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:LightningMcQueen.ViewModels"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="790"
              Background="Transparent"
@@ -71,39 +72,13 @@
                             FontSize="14"
                             VerticalAlignment="Center"
                             Margin="0,0,5,0"/>
-                        <ComboBox x:Name="cmbHoursFrom"
-                  ItemsSource="{Binding Hours}"
-                  SelectedItem="{Binding HourFrom, Mode=TwoWay}"
-                  FontFamily="Bahnschrift SemiBold SemiCondensed"
-                  FontSize="14"
-                  VerticalAlignment="Center"
-                  Margin="0,0,5,0"/>
-                        <ComboBox x:Name="cmbMinutesFrom"
-                  ItemsSource="{Binding Minutes}"
-                  SelectedItem="{Binding MinuteFrom, Mode=TwoWay}"
-                  FontFamily="Bahnschrift SemiBold SemiCondensed"
-                  FontSize="14"
-                  VerticalAlignment="Center"
-                  Margin="0,0,5,0"/>
+                        <xctk:TimePicker x:Name="FromTimePicker" Margin="0,0,5,0"/>
                         <TextBlock Text="до"
                    FontFamily="Bahnschrift SemiBold SemiCondensed"
                    FontSize="14"
                    VerticalAlignment="Center"
                    Margin="0,0,5,0"/>
-                        <ComboBox x:Name="cmbHoursTo"
-                  ItemsSource="{Binding Hours}"
-                  SelectedItem="{Binding HourTo, Mode=TwoWay}"
-                  FontFamily="Bahnschrift SemiBold SemiCondensed"
-                  FontSize="14"
-                  VerticalAlignment="Center"
-                  Margin="0,0,5,0"/>
-                        <ComboBox x:Name="cmbMinutesTo"
-                  ItemsSource="{Binding Minutes}"
-                  SelectedItem="{Binding MinuteTo, Mode=TwoWay}"
-                  FontFamily="Bahnschrift SemiBold SemiCondensed"
-                  FontSize="14"
-                  VerticalAlignment="Center"
-                  Margin="0,0,0,0"/>
+                        <xctk:TimePicker x:Name="ToTimePicker" />
                         <Button Content="Применить"
                                 
                                 FontFamily="Bahnschrift SemiBold SemiCondensed"

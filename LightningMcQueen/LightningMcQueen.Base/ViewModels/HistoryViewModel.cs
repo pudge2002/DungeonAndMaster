@@ -11,12 +11,14 @@ using System.IO;
 using System.Reactive;
 using System.Reflection;
 using System.Text;
+using Xceed.Wpf.Toolkit;
 
 
 namespace LightningMcQueen.ViewModels
 {
     internal class HistoryViewModel : ReactiveObject
     {
+        
         [Reactive] public string filename { get; set; }
         public ObservableCollection<State> ShowableStates { get; set; }=new ObservableCollection<State>();
         public ReactiveCommand<Unit, Unit> OpenFileCommand { get; private set; }
@@ -56,5 +58,7 @@ namespace LightningMcQueen.ViewModels
                 newStates.Clear();
             }
         }
+        
     }
 }
+
